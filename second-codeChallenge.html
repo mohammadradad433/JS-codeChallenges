@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task2</title>
+    </head>
+    <body>
+        <script>
+            //A1
+            let status;
+            let age=18;
+            if(age>=18){
+                status="Adult";
+            }else if(age>=13 && age<18){
+                status="Teen";
+            }else {
+                status="Child";
+            }
+            console.log(status);
+            //A2
+            let x = 0;
+            if (x) {
+                 console.log("truthy");
+             }else {
+                 console.log("falsy");
+                }
+            /*Since x = 0 and 0 is a falsy value in JavaScript, the if condition is false.
+              Therefore, the else block runs and the console output will be: falsy */
+            //A3
+            let num=-5;
+            if(num>0){
+                console.log("positive");
+            } else if(num<0){
+                console.log("negative");
+            } else {
+                console.log("zero");
+            }
+            //A4
+            let a="10";
+            let b=10;
+            if(a==b){
+                console.log("a==b is true");
+            }else {
+                console.log("a==b is false");
+            }
+            if(a===b){
+                console.log("a===b is true");
+            }else{
+                console.log("a===b is false");
+            }
+            //A5
+            var score=85;
+            if(score>=90){
+                console.log("Grade: A");
+            } else if(score>=80){
+                console.log("Grade: B");
+            } else if(score>=70){
+                console.log("Grade: C");
+            } else if(score>=60){
+                console.log("Grade: D");
+            } else {
+                console.log("Grade: F");
+            }
+            //A6
+            let temp = 30;
+            if (temp > 30) console.log("hot");
+            else if (temp > 20) console.log("warm");//i don't understand this condition because if temp is 30 it will not be greater than 30 but it will be greater than 20 so it will log warm 
+            else console.log("cold");//maybe you want to change the 2nd condition to temp =30
+            //A7
+            var n=7;
+            if (n%2===0)
+                console.log("even");
+            else console.log("odd");
+            //A8
+            const user = {role: "admin", active: true};
+            if(user.role==="editor"||user.role==="admin" &&user.active===true)
+                console.log("can-edit");
+            else console.log("cannot-edit");
+            //A9
+            var sum=0;
+            for(let i=1;i<=100;i++){
+                sum+=i;
+            }
+            console.log(sum);
+            //A10
+            var t=5;
+            while(t>0){
+                console.log(t);
+                t--;
+            }
+            console.log("///////////////////////////////////////");
+            //A11
+            var count=0;
+            do{
+                console.log(count);
+                count++;
+            }while(count<=3);
+            console.log("///////////////////////////////////////");
+            //A12
+            for(let i=0;i<=10;i++){
+                console.log(i*3);
+            }
+            console.log("///////////////////////////////////////");
+            //A13
+            let i = 0;
+            while (i < 3) { 
+                console.log(i);//This code will result in an infinite loop because the value of i is never updated within the loop.
+                i++;//This line increments i by 1 in each iteration, allowing the loop to eventually terminate when i reaches 3.
+            }
+            console.log("///////////////////////////////////////");
+            //A14
+            var n=2;
+            var fac=1;
+            if(n===0){
+                fac=1;
+            }
+            for(let i=n;i>0;i--){
+                fac*=i;
+            }
+            console.log(fac);
+            //A15
+            var str="";
+            for(let i=0;i<5;i++){
+                str+="#";
+            }
+            console.log(str);
+            //A16
+            var summ=0;
+            for(let i=1;i<=50;i++){
+                if(i%2===0 && i%5===0)
+                    summ++;
+                else continue;
+            }
+            console.log(summ);
+            //switchs:
+            //A17
+            var day="Sun";
+            switch(day){
+                case "Mon":
+                case "Tue":
+                case "Wed":
+                case "Thu":
+                case "Fri":
+                    console.log("weekday");
+                    break;
+                case "Sat":
+                case "Sun":
+                    console.log("weekend");
+                    break;
+                default:
+                    console.log("Invalid day");
+            }
+            //A18
+            var month=11;
+            switch(month){
+                case 12:
+                case 1:
+                case 2:
+                console.log("Winter");
+                break;
+                case 3:
+                case 4:
+                case 5:
+                    console.log("Spring");
+                break;
+                case 6:
+                case 7:
+                case 8:
+                console.log("Summer");
+                break;
+                case 9:
+                case 10:
+                case 11:
+                console.log("Autumn");
+                break;
+                default:
+                    console.log("Invalid month");
+            }
+            //A19
+            const color = "green";
+            switch (color) {
+            case "red": console.log("stop"); break;
+            case "yellow": console.log("slow"); break;
+            default: console.log("go");
+            }/*Here the value of color is "green", which does not match any of the specified cases ("red" or "yellow").
+                Therefore, the default case will be executed, and the console output will be: go*/
+            //A20
+            var command ="stop";
+            switch(command){
+                case "start":
+                start();
+                break;
+                case "stop":
+                stop();
+                break;
+                case "pause":
+                pause();
+                break;
+                default:
+                    console.log("unknown");
+            }
+            function start(){
+                console.log("started");
+            }
+            function stop(){
+                console.log("stopped");
+            }
+            function pause(){
+                console.log("paused");
+            }
+            //Declarations, Expressions,Anonymous functions:
+            //A21
+            function add(a,b){
+                return a+b;
+            }
+            var result=add(10,24);
+            console.log(result);//or console.log(add(10,24));
+            //A22
+            var name="mohammad";
+            const greet= function naming(name) {
+                return "Hello, "+name+"!";
+            }
+            console.log(greet(name));
+            //A23
+            setTimeout(function(){
+                console.log("done");
+            },500);
+            //A24
+            console.log(declared());
+            //console.log(expressed()); // what happens?
+            /* The second log will not show "B" because expressed() is a function expression
+            stored in a const variable, and it cannot be used before initialization */
+            function declared(){ return "A"; }
+            const expressed = function(){ return "B"; };
+            //A25
+            var c=9;
+            function isEven(){
+                // Implementation for checking if a number is even
+                return c % 2 === 0;
+            }
+            if(isEven()){
+                console.log(c+" is even");
+            } else {
+                console.log(c+" is odd");
+            }
+            //Default Parameters & More:
+            //A26
+            function pow(base, exponent = 2){
+                return base ** exponent;
+            }
+            console.log(pow(5)); // Output: 25 (5 raised to the power of 2)
+            console.log(pow(5, 3)); // Output: 125 (5 raised to the power of 3)
+            //A27
+            function formatname(first,last=""){
+                if(last ===""){
+                    return first;
+                } else {
+                    return first+" "+last;
+                }
+                // or you can use this line instead of the if-else statement:
+                // return (first +" "+last).trim();
+            }
+            console.log(formatname("mohammad","Raddad"));
+            console.log(formatname("mohammad"));
+            //A28
+            function safedivide(a,b=1){
+                if(b===0){
+                    return "∞";//or return Infinity;
+                } else {
+                    return a/b;
+                }
+            }
+            console.log(safedivide(10,2)); // Output: 5
+            console.log(safedivide(10,0)); // Output: ∞
+            //A29
+            function applyDiscount(price, percent = 10) {
+                return price-(price*percent/100);
+            }
+            console.log(applyDiscount(100)); // Output: 90 == 100-(10% of 100)
+            console.log(applyDiscount(100, 20)); // Output: 80 == 100-(20% of 100)
+            //A30
+            function repeatText(text, times = 1) {
+                    let result = "";
+                    for(let i=0; i<times; i++){
+                        result += text;
+                    }
+                    return result;
+                }
+            console.log(repeatText("Hello", 3)); // Output: "Hello" printed 3 times 
+            console.log(repeatText("Hi")); // Output: "Hi" printed 1 time (default value of times is 1)
+            //Objects & Arrays:
+            //A31
+            let book ={
+                title:"book title",
+                auther : "Mohammad Raddad",
+                year:2020
+            };
+            console.log(book.title);
+            //A32
+            book.pages=300;
+            console.log(book);
+
+            delete book.year;
+            console.log(book);
+            //A33
+            const useer = { first: "Nader", last: "Hantash" };
+            function fullname(user) {
+                return user.first + " " + user.last;
+
+            }
+            console.log(fullname(useer));
+            //A34
+            const person = { name: "Lina", age: 25 };
+            console.log(person);
+                person.age = 26; // Modifying the age property of the person object
+            console.log(person);
+            //we can modify the properties of a const object, but we cannot reassign the entire object to a new value.
+            //person = { name: "Lina", age: 26 }; // This will throw an error because we cannot reassign a const variable to a new object.
+            //A35
+            let settings ={
+                theme:"light",
+                lang:"en"
+            };
+            console.log(settings);
+            if(settings.theme==="light"){
+                settings.theme="dark";
+            }else {
+                settings.theme="light";
+            }
+            console.log(settings);
+            //A36
+            let nums=[5,2,9,1];
+            nums.shift(); // removes the first element from the array
+            nums.push(10); // adds a new element to the end of the array
+            console.log(nums);
+            console.log(nums.length);
+            //A37
+            let letters = ["b", "a", "c"];
+            letters.sort(); // sorts the array in place
+            console.log(letters);
+            //A38
+            let scores = [40, 100, 1, 5, 25, 10];
+            scores.sort((a, b) => a - b);
+            console.log(scores);
+            //A39
+            let colors = ["red", "green"];
+            colors.splice(1, 0, "blue");
+            console.log(colors);
+            //A40
+            let cities = ["Cairo", "Dubai", "Amman", "Doha", "Riyadh"];
+            cities.splice(1, 2);
+            console.log(cities);
+        </script>
+    </body>
+</html>
