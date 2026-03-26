@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Task3</title>
+    </head>
+    <body>
+        <h1 id="task">Task 3</h1>
+
+        <p>First paragraph</p>
+        <p>Second paragraph</p>
+        <p>Third paragraph</p>
+
+        <p class="item">Item 1</p>
+        <p class="item">Item 2</p>
+        <p class="item">Item 3</p>
+
+        <input type="text"id="username" value="Mohammad">
+
+        <button>Submit</button>
+        <button>Reset</button>
+        <!-- //6 -->
+        <ul>
+            <li>1st</li>
+            <li>2nd</li>
+            <li>3rd</li>
+        </ul>
+
+        <div data-id="5">Item 1</div>
+
+        <h1 id="title">HelloTitle</h1>
+
+        <!--B: Change the text-->
+        <h2>welcome</h2>
+
+        <div id="content10">old content</div>
+
+        <button id="button11">click me</button>
+
+        <div id="giveClass">Giving Class</div>
+        <!-- //14 -->
+        <div id="box">Hello</div>
+        <button onclick="toggleClass()">Toggle</button>
+
+        <p id="text">This is a paragraph</p>
+
+        <img id="myImage">
+
+        <!-- //Event Listeners -->
+        <button id="btn17">Click me</button>
+
+        <div id="box18" style="width:100px;height:100px;background:gray;"></div>
+
+        <img id="img19" src="photo.jpg" width="200">
+
+        <input type="text" id="input20">
+
+        <form id="myForm">
+        <input type="text">
+        <button type="submit">Submit</button>
+        </form>
+
+        <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        </ul>
+
+        <button id="btn23">Click once</button>
+
+        <p id="para">Double click me</p>
+
+        <div>
+            <button>Button</button>
+            <p>Paragraph</p>
+        </div>
+
+        <input type="text" id="input26">
+
+        <script>
+            //1
+            let a=document.getElementById("task");
+            console.log(a.textContent);
+            let b=document.getElementsByTagName("h1")[0];
+            console.log(b.textContent);
+            let c=document.querySelector("h1");
+            console.log(c.textContent);
+            //2
+            let paragraphs = document.querySelectorAll("p");
+            //or let paragraphs = document.getElementsByTagName("p");
+            console.log(paragraphs[1].textContent);
+            paragraphs[1].textContent = "Changed paragraph";
+            //3
+            let items = document.querySelectorAll(".item");
+            items.forEach(function(item) {
+                item.style.color = "blue";
+            });
+            //4
+            let username=document.getElementById("username");
+                console.log(username.value);
+            //5
+            let buttons=document.querySelectorAll("button");
+            buttons.forEach(function(button){
+                button.style.border="2px solid red";
+            });
+            //6
+            let listitem=document.querySelector("ul li");
+            console.log(listitem);
+            console.log(listitem.textContent);
+            //7
+            let element = document.querySelector('[data-id="5"]');
+            console.log(element);
+            //8
+            let title=document.getElementById("title");
+            console.log(title.tagName);
+            //B: Change the text
+            //9
+            let header2=document.querySelector("h2");
+            header2.textContent = "welcome to DOM!";
+            //10
+            let content10=document.getElementById("content10");
+            content10.innerHTML ="<strong>Hello</strong>";
+            //11
+            window.onload= function(){
+                let button11=document.getElementById("button11");
+                button11.style.backgroundColor="green";
+            };
+            //12
+            let changePFont=document.querySelectorAll("p");
+            changePFont.forEach(function(p){
+                p.style.fontSize="20px";
+            });
+            //13
+            let giveClass=document.getElementById("giveClass");
+            giveClass.classList.add("active");
+            //14
+            function toggleClass() {
+                let element = document.getElementById("box");
+                element.classList.toggle("active");
+            }
+            //15
+            let element15 = document.getElementById("text");
+            element15.style.display = "none";
+            //16
+            let myImage=document.getElementById("myImage");
+            myImage.src="photo.jpg";
+            myImage.style.display="none";
+            //Event Listeners :
+            //17
+            let btn17 = document.getElementById("btn17");
+            btn17.addEventListener("click", function(){
+                alert("Button clicked!");
+            });
+            //18
+            let box18 = document.getElementById("box18");
+            box18.addEventListener("click", function(){
+                box18.style.backgroundColor = "red";
+            });
+            //19
+            let img19 = document.getElementById("img19");
+            img19.addEventListener("mouseover", function(){
+                img19.style.width = "300px";
+            });
+            img19.addEventListener("mouseout", function(){
+                img19.style.width = "200px";
+            });
+            //20
+            let input20 = document.getElementById("input20");
+            input20.addEventListener("keyup", function(){
+                console.log(input20.value);
+            });
+            //21
+            let form = document.getElementById("myForm");
+            form.addEventListener("submit", function(event){
+                event.preventDefault();
+                console.log("Form submitted without reload");
+            });
+            //22
+            let item22 = document.querySelectorAll("li");
+            item22.forEach(function(li){
+                li.addEventListener("click", function(){
+                    li.style.backgroundColor = "yellow";
+                });
+            });
+            //23
+            let btn23 = document.getElementById("btn23");
+            btn23.addEventListener("click", function(){
+                btn23.disabled = true;
+            });
+            //24
+            let para = document.getElementById("para");
+            para.addEventListener("dblclick", function(){
+                para.style.fontWeight = "bold";
+            });
+            //25
+            document.addEventListener("click", function(event){
+                console.log("Clicked element:", event.target);
+            });
+            //26
+            let input26 = document.getElementById("input26");
+            input26.addEventListener("keyup", function(event){
+                if(event.key === "Enter"){
+                    console.log("Enter key pressed");
+                }
+            });
+
+
+        </script>
+        <!--DOM Traversing -->
+        <div id="container">
+            <button id="btn">Click</button>
+        </div>
+
+        <ul id="list">
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+
+        <h2>Title</h2>
+        <p id="para">Paragraph</p>
+
+        <ul id="list2">
+            <li>Apple</li>
+            <li>Orange</li>
+            <li>Banana</li>
+        </ul>
+
+        <div>
+            <section>
+                <p id="child">Hello</p>
+            </section>
+        </div>
+
+        <ul id="list"></ul>
+
+        <div id="container"></div>
+
+        <p id="target">Paragraph</p>
+
+        <div id="containerr">
+            <p>Old element</p>
+        </div>
+
+        <div id="original">
+            <p>Hello World</p>
+        </div>
+        <script>
+            //DOM Traversing :
+            //27
+            let btn = document.getElementById("btn");
+            btn.addEventListener("click", function(){
+                console.log(btn.parentElement);
+            });
+            //28
+            let list = document.getElementById("list");
+            console.log(list.children);
+            //29
+            let item29 = document.querySelectorAll("li");
+
+            item29.forEach(function(li){
+                li.addEventListener("click", function(){
+                    console.log(li.nextElementSibling);
+                });
+            });
+
+            //30
+            let para30 = document.getElementById("para");
+            console.log(para30.previousElementSibling);
+
+            //31
+            let item31 = document.querySelectorAll("#list2 li");
+            item31.forEach(function(li){
+                li.addEventListener("click", function(){
+
+                    console.log("Parent:", li.parentElement);
+
+                    console.log("Children:");
+                    console.log(li.parentElement.children);
+
+                });
+            });
+            //32
+            let child = document.getElementById("child");
+            let current = child;
+            while(current){
+                console.log(current);
+                current = current.parentElement;
+            }
+            //Creating Elements Dynamically :
+            //33
+            let ul = document.getElementById("list");
+            let li = document.createElement("li");
+            li.textContent = "New Item";
+            ul.appendChild(li);
+            //34
+            let btn34 = document.createElement("button");
+            btn34.textContent = "Click me";
+
+            btn34.addEventListener("click", function(){
+                alert("Dynamic button clicked!");
+            });
+
+            document.body.appendChild(btn34);
+            //35    
+            let div = document.createElement("div");
+            let title35 = document.createElement("h2");
+            title35.textContent = "Title";
+            let para35 = document.createElement("p");
+            para35.textContent = "This is a paragraph.";
+
+            div.appendChild(title35);
+            div.appendChild(para35);
+
+            document.body.appendChild(div);
+            //36
+            let input = document.createElement("input");
+            input.type = "text";
+            let target = document.getElementById("target");
+            document.body.insertBefore(input, target);
+            //37
+            let newElement = document.createElement("p");
+            newElement.textContent = "First element";
+            let container = document.getElementById("container");
+            container.prepend(newElement);
+            //38
+            let message = document.createElement("div");
+            message.textContent = "This is a notification";
+
+            document.body.appendChild(message);
+
+            setTimeout(function(){
+                message.remove();
+            }, 3000);
+            //39
+            let card = document.createElement("div");
+
+            let img = document.createElement("img");
+            img.src = "image.jpg";
+            img.style.width = "200px";
+
+            let title39 = document.createElement("h3");
+            title39.textContent = "Card Title";
+
+            let text39 = document.createElement("p");
+            text39.textContent = "Card description here";
+
+            let btn39 = document.createElement("button");
+            btn39.textContent = "Read More";
+
+            card.appendChild(img);
+            card.appendChild(title39);
+            card.appendChild(text39);
+            card.appendChild(btn39);
+            document.body.appendChild(card);
+            //40
+            let original = document.getElementById("original");
+            let clone = original.cloneNode(true);
+            document.body.appendChild(clone);
+
+            </script>
+        <!--Advanced DOM Manipulation :-->
+        <!--//41-->>
+        <input id="taskInput">
+        <button id="addTask">Add</button>
+        <ul id="taskList"></ul>
+
+        <script>
+        let input = document.getElementById("taskInput");
+        let btn41 = document.getElementById("addTask");
+        let list41 = document.getElementById("taskList");
+
+        btn41.addEventListener("click", function(){
+
+            let li = document.createElement("li");
+            li.textContent = input.value;
+
+            let del = document.createElement("button");
+            del.textContent = "Delete";
+
+            let edit = document.createElement("button");
+            edit.textContent = "Edit";
+
+            del.onclick = () => li.remove();
+            edit.onclick = () => {
+                let newText = prompt("Edit task:");
+                li.firstChild.textContent = newText;
+            };
+            li.appendChild(edit);
+            li.appendChild(del);
+            list41.appendChild(li);
+
+        });
+        </script>
+        <!--//42-->
+        <textarea id="text"></textarea>
+        <p id="count">0 characters</p>
+
+        <script>
+        let text = document.getElementById("text");
+        let count = document.getElementById("count");
+
+        text.addEventListener("input", function(){
+            count.textContent = text.value.length + " characters";
+        });
+        </script>
+
+        <!--//43-->
+        <ul id="menu">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        </ul>
+        <script>
+        let item43 = document.querySelectorAll("#menu li");
+
+        item43.forEach(li=>{
+            li.addEventListener("click", function(){
+                item43.forEach(el=>el.style.background="");
+                li.style.background="yellow";
+            });
+        });
+        </script>
+
+        <!--//44-->
+
+        <h3 id="title">Menu</h3>
+        <ul id="dropdown" style="display:none">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        </ul>
+
+        <script>
+        let title44 = document.getElementById("title");
+        let menu44 = document.getElementById("dropdown");
+
+        title44.addEventListener("click", function(){
+
+            if(menu44.style.display==="none"){
+                menu44.style.display="block";
+            }else{
+                menu44.style.display="none";
+            }
+
+        });
+        </script>
+        <!--//45-->
+
+        <button id="modeBtn">Toggle Mode</button>
+        <script>
+        let btn45 = document.getElementById("modeBtn");
+
+        btn45.addEventListener("click", function(){
+            document.body.classList.toggle("dark");
+        });
+        </script>
+
+        <style>
+        .dark{
+        background:black;
+        color:white;
+        }
+        </style>
+        <!--//46-->
+        <div id="tableContainer"></div>
+
+        <script>
+        let data = [
+        {name:"Ali", age:22},
+        {name:"Sara", age:21}
+        ];
+        let table = document.createElement("table");
+        data.forEach(obj=>{
+            let row = document.createElement("tr");
+
+            let name = document.createElement("td");
+            name.textContent = obj.name;
+
+            let age = document.createElement("td");
+            age.textContent = obj.age;
+
+            row.appendChild(name);
+            row.appendChild(age);
+
+            table.appendChild(row);
+        });
+        document.getElementById("tableContainer").appendChild(table);
+        </script>
+        <!--//47-->
+        <ul id="products">
+        <li data-info="Phone details">Phone</li>
+        <li data-info="Laptop details">Laptop</li>
+        </ul>
+        <div id="details"></div>
+        <script>
+        let item47 = document.querySelectorAll("#products li");
+        let details = document.getElementById("details");
+
+        item47.forEach(li=>{
+            li.addEventListener("click", function(){
+                details.textContent = li.dataset.info;
+            });
+        });
+        </script>
+        <!--//48-->
+        <img id="slider" width="300">
+        <br>
+        <button id="prev">Prev</button>
+        <button id="next">Next</button>
+
+        <script>
+        let images=["1.jpg","2.jpg","3.jpg"];
+        let index=0;
+
+        let slider=document.getElementById("slider");
+        slider.src=images[index];
+
+        document.getElementById("next").onclick=function(){
+            index=(index+1)%images.length;
+            slider.src=images[index];
+        }
+
+        document.getElementById("prev").onclick=function(){
+            index=(index-1+images.length)%images.length;
+            slider.src=images[index];
+        }
+        </script>
+        <!--//49-->
+        <form id="myForm">
+        <input type="text" id="name">
+        <input type="email" id="email">
+        <button type="submit">Submit</button>
+        </form>
+
+        <script>
+        let form49=document.getElementById("myForm");
+
+        form49.addEventListener("submit",function(e){
+
+            let name=document.getElementById("name");
+            let email=document.getElementById("email");
+
+            if(name.value==="" || email.value===""){
+                e.preventDefault();
+
+                if(name.value==="") name.style.border="2px solid red";
+                if(email.value==="") email.style.border="2px solid red";
+            }
+
+        });
+        </script>
+        <!--//50-->
+        <div class="faq">
+        <h3>Question 1</h3>
+        <p style="display:none">Answer 1</p>
+
+        <h3>Question 2</h3>
+        <p style="display:none">Answer 2</p>
+        </div>
+
+        <script>
+        let questions=document.querySelectorAll(".faq h3");
+
+        questions.forEach(q=>{
+            q.addEventListener("click",function(){
+
+                let ans=q.nextElementSibling;
+
+                ans.style.display=
+                ans.style.display==="none"?"block":"none";
+
+            });
+        });
+        </script>
+
+    </body>
+</html>
